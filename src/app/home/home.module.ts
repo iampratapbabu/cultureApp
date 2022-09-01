@@ -7,6 +7,10 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 
+//components import
+import {DemoComponent} from '../components/demo/demo.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +18,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,DemoComponent]
 })
 export class HomePageModule {}
