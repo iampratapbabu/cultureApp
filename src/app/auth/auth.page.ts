@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-auth',
@@ -15,16 +16,22 @@ export class AuthPage implements OnInit {
   ngOnInit() {
 
   }
-  headers= new HttpHeaders()
-      .set('content-type', 'application/json')
-      .set('Access-Control-Allow-Origin', '*');
+
 
   //login functionality
   isLoggedIn = true;
-  login(data:any){
+  res:any={}
+  async login(data:any){
+    let res={};
     console.log("button clicked",data);
-    this.http.post('http://127.0.0.1:8000/user/login',data.value,{ 'headers': this.headers }).subscribe(data=>console.log(data))
+    await this.http.post('http://127.0.0.1:8000/user/login',data.value).subscribe(data=>{
+      this.router.navigate(['/dashboard']);
+      this.res = data;
+      console.log(this.res);
+      });
 
+      
+     
     
     
     // if(this.isLoggedIn){
@@ -33,6 +40,10 @@ export class AuthPage implements OnInit {
     // }else{
     //   console.log("Invalid credentials");
     // }
+
+   
   }
+
+  
 
 }

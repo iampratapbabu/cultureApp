@@ -18,7 +18,7 @@
           <div padding>
             <ion-item>
               <ion-label position="floating">Enter your email</ion-label>
-              <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+              <ion-input name="userid" type="email" placeholder="your@email.com" ngModel required></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Password</ion-label>
@@ -33,5 +33,8 @@
       </ion-row>
     </ion-grid>
   </form>
+
+  <p>{{this.res.status}}</p>
+  <p>{{this.res.msg}}</p>
   
 </ion-content>
