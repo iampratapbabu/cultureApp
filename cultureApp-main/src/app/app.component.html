@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" contentId="main-menu-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Account
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+        <ion-item lines="none" routerLink='/auth'>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>LOGIN</ion-label>
+        </ion-item>
+        
+        <ion-item lines="none" routerLink='/'>
+          <ion-icon name="exit"></ion-icon>
+          <ion-label>HOME</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  
+  
+  <ion-router-outlet id="main-menu-content" main></ion-router-outlet>
+  
+</ion-app>

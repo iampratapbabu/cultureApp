@@ -1,0 +1,57 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+<ion-title></ion-title>
+  </ion-toolbar>
+
+  <ion-buttons slot="start">
+    <ion-back-button defaulthref="home" text=""></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+
+<ion-content>
+
+<ion-img src="./assets/header.png"></ion-img>
+ 
+<h2 class="h2">Login to Culture Holidays</h2>
+<ion-card-content>
+
+  <form #formData="ngForm" (ngSubmit)="login(formData)">
+    <div class="wrapform">
+            <ion-item class="box-1">  
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-input name="userid" type="email" placeholder="User Id" ngModel required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="forgot_password">
+            <ion-button fill="clear" class="ion-no-padding" routerLink="/forget-password">Forget Password ?</ion-button>
+          </div>
+
+
+          <div class="signin-btn">
+            <ion-button class="signbtn" shape="round" color="danger" (click)="presentAlert()" type="submit" [disabled]="formData.invalid" expand="block" ion-no-padding>Login</ion-button>
+            
+          </div>
+
+          <div class="sign-up">
+            <ion-label class="ion-no-padding">Don't have an account?<ion-button fill="clear" class="ion-no-padding signup"  routerLink="/forget-password">Sign Up</ion-button></ion-label>
+          </div>
+  </form>
+
+</ion-card-content>
+
+ 
+
+
+
+  <p>{{this.res.status}}</p>
+  <p>{{this.res.msg}}</p>
+  
+</ion-content>
